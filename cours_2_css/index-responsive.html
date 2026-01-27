@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ma Page Responsive</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            font-size: 16px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1rem;
+        }
+
+        nav {
+            background: #333;
+            padding: 1rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            padding: 0.5rem 1rem;
+            display: block;
+        }
+
+        nav a:hover {
+            color: #667eea;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        .hero {
+            background: #f4f4f4;
+            padding: 3rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+
+        .hero h2 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+
+        .hero p {
+            font-size: 1.125rem;
+        }
+
+        .section-title {
+            margin-bottom: 1.5rem;
+            font-size: 1.75rem;
+            color: #333;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+
+        .card h3 {
+            color: #764ba2;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .card p {
+            font-size: 1rem;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        /* ============================================
+           MEDIA QUERIES - RESPONSIVE DESIGN
+           ============================================ */
+
+        /* Tablettes et petits ordinateurs (≤ 992px) */
+        @media (max-width: 992px) {
+            .cards {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+
+            .container {
+                padding: 0 1.5rem;
+            }
+        }
+
+        /* Tablettes en portrait et grands smartphones (≤ 768px) */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            header p {
+                font-size: 0.95rem;
+            }
+
+            header {
+                padding: 1.5rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 0.5rem;
+                align-items: center;
+            }
+
+            nav {
+                padding: 1rem 0;
+            }
+
+            nav a {
+                padding: 0.75rem 1.5rem;
+                min-width: 200px;
+                text-align: center;
+            }
+
+            .hero h2 {
+                font-size: 1.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .card h3 {
+                font-size: 1.25rem;
+            }
+        }
+
+        /* Smartphones (≤ 576px) */
+        @media (max-width: 576px) {
+            body {
+                font-size: 14px;
+            }
+
+            header h1 {
+                font-size: 1.5rem;
+            }
+
+            header p {
+                font-size: 0.875rem;
+            }
+
+            header {
+                padding: 1.25rem;
+            }
+
+            .container {
+                padding: 0 1rem;
+                margin: 1rem auto;
+            }
+
+            .hero {
+                padding: 1.5rem;
+                border-radius: 8px;
+            }
+
+            .hero h2 {
+                font-size: 1.25rem;
+            }
+
+            .hero p {
+                font-size: 0.875rem;
+            }
+
+            .section-title {
+                font-size: 1.25rem;
+                margin-bottom: 1rem;
+            }
+
+            .cards {
+                gap: 1rem;
+                margin: 1rem 0;
+            }
+
+            .card {
+                padding: 1.5rem;
+                border-radius: 6px;
+            }
+
+            .card h3 {
+                font-size: 1.125rem;
+            }
+
+            .card p {
+                font-size: 0.875rem;
+            }
+
+            footer {
+                padding: 1.5rem;
+                font-size: 0.875rem;
+            }
+
+            nav a {
+                min-width: 180px;
+                padding: 0.625rem 1rem;
+            }
+        }
+
+        /* Très petits smartphones (≤ 360px) */
+        @media (max-width: 360px) {
+            header h1 {
+                font-size: 1.25rem;
+            }
+
+            .container {
+                padding: 0 0.75rem;
+            }
+
+            .hero {
+                padding: 1rem;
+            }
+
+            .card {
+                padding: 1.25rem;
+            }
+
+            nav a {
+                min-width: 150px;
+                font-size: 0.875rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bienvenue sur Ma Page</h1>
+        <p>Un exemple simple et élégant parfaitement responsive</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#accueil">Accueil</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section class="hero">
+            <h2>Section Principale</h2>
+            <p>Ceci est une page HTML responsive qui s'adapte parfaitement à toutes les tailles d'écran. Elle utilise les media queries, Flexbox et Grid pour offrir une expérience optimale sur smartphones, tablettes et ordinateurs.</p>
+        </section>
+
+        <h2 class="section-title">Nos Services</h2>
+        <div class="cards">
+            <div class="card">
+                <h3>🎨 Design</h3>
+                <p>Création de designs modernes et attractifs pour vos projets web. Interface intuitive et expérience utilisateur optimisée.</p>
+            </div>
+            <div class="card">
+                <h3>💻 Développement</h3>
+                <p>Développement de sites web performants et responsive. Code propre et maintenable pour tous vos projets.</p>
+            </div>
+            <div class="card">
+                <h3>🚀 Déploiement</h3>
+                <p>Mise en ligne et maintenance de vos applications. Support technique et optimisation continue.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 - Tous droits réservés | Testez cette page sur différents appareils !</p>
+    </footer>
+</body>
+</html>
