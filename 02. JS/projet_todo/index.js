@@ -42,3 +42,8 @@ input.addEventListener("keydown", (e) => {
 add.addEventListener("click", (e) => {
   addTask(input.value);
 });
+
+// Remove all
+// Fichiers
+// Fetch
+// localStorage
