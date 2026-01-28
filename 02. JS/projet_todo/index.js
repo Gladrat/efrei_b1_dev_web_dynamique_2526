@@ -5,7 +5,32 @@ const clear = document.querySelector("#clear");
 const url = document.querySelector("#url");
 const load = document.querySelector("#load");
 
-const tasks = ["Apprendre HTML", "Apprendre le CSS", "Apprendre le JS"];
+const KEY = "todo-list";
+
+function getLocalStorage() {
+  if (!localStorage.getItem(KEY)) {
+    localStorage.setItem(KEY, "[]");
+  }
+
+  return JSON.parse(localStorage.getItem(KEY));
+}
+
+let TASKS = getLocalStorage();
+
+function setLocalStorage(value) {
+  TASKS.push(value);
+  localStorage.setItem(KEY, JSON.stringify(TASKS));
+}
+
+function removeFromLocalStorage(value) {
+  TASKS.slice(TASKS.indexOf(value), 1);
+  localStorage.setItem(KEY, JSON.stringify(TASKS));
+}
+
+function clearLocalStorage() {
+  TASKS = [];
+  localStorage.setItem(KEY, "[]");
+}
 
 const h1 = document.querySelector("h1");
 h1.textContent = "MA TODO LIST:";
@@ -29,22 +54,25 @@ function addTask(t) {
   input.focus();
 }
 
-for (const t of tasks) {
+for (const t of TASKS) {
   addTask(t);
 }
 
 input.addEventListener("keydown", (e) => {
   if (e.key === "Enter") {
+    setLocalStorage(input.value);
     addTask(input.value);
   }
 });
 
 add.addEventListener("click", (e) => {
+  setLocalStorage(input.value);
   addTask(input.value);
 });
 
 clear.addEventListener("click", () => {
   list.innerHTML = "";
+  clearLocalStorage();
 });
 
 // Remove all

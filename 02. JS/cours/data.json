@@ -1,0 +1,23 @@
+{
+  "prenom": "Mathéo",
+  "nom": "Dubois",
+  "age": 18,
+  "bde": false,
+  "promotions": {
+    "b1_dev": {
+      "anneeDepart": 2025,
+      "anneeFin": 2026,
+      "notes": {
+        "webDynamique": [],
+        "algo": [
+          4,
+          12
+        ],
+        "c": [
+          12.5,
+          19
+        ]
+      }
+    }
+  }
+}
