@@ -75,8 +75,3 @@ clear.addEventListener("click", () => {
   list.innerHTML = "";
   clearLocalStorage();
 });
-
-// Remove all
-// Fichiers
-// Fetch
-// localStorage
