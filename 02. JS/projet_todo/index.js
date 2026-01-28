@@ -23,7 +23,7 @@ function setLocalStorage(value) {
 }
 
 function removeFromLocalStorage(value) {
-  TASKS.slice(TASKS.indexOf(value), 1);
+  TASKS = TASKS.splice(TASKS.indexOf(value), 1);
   localStorage.setItem(KEY, JSON.stringify(TASKS));
 }
 
@@ -43,9 +43,10 @@ function addTask(t) {
     li.textContent = t;
     remove.textContent = "REMOVE";
 
-    remove.addEventListener("click", (event) =>
-      event.target.parentNode.remove(),
-    );
+    remove.addEventListener("click", (event) => {
+      event.target.parentNode.remove();
+      removeFromLocalStorage(t);
+    });
 
     li.append(remove);
     list.append(li);
