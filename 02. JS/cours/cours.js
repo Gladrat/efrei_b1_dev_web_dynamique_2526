@@ -1,50 +1,50 @@
-// function hello() {
-//     console.log("Hello!");
-// }
-
-// setTimeout(hello, 2500);
-
-// // ======== EQUIVALENT (ou presque) ========
+console.log("Début");
 
 // setTimeout(() => {
-//   console.log("Hello!");
-// }, 2500);
+//   console.log("requête pour récupérer le profil Github de Maxime");
+//   setTimeout(() => {
+//     console.log("lister l'ensemble des repo dans le profil de Maxime");
+//     setTimeout(() => {
+//       console.log("extraire le nombre de commit de chaque repo");
+//     }, 1500);
+//   }, 500);
+// }, 100*20);
 
-// function detectClick() {
-//   console.log("click detected!!!");
+// const p = new Promise((resolve, reject) => {
+//   // appel http https://randomuser.me/api/
+//   setTimeout(() => resolve("Hello world!"), 4000);
+//   setTimeout(() => reject("Nos serveurs sont saturés, déso."), 4000);
+// });
 
-// }
+// console.log(p);
 
-// document
-//   .querySelectorAll("button")
-//   .forEach((e) => e.addEventListener("click", (event) => console.log(event)));
+// p.then((value) => {
+//   console.log(value);
+//   console.log(p);
+// });
 
-// const eleves = ["Maxime", "Vinny", "Jules", "Mathéo"];
-// JSON → JavaScript Object Notation
-// JavaScript
+// p.catch((err) => console.log(err));
 
-// Objets → POO (2015) : Classes, méthodes, encapsulation, attributs, héritage, polymorphisme
-//        → Objets littéraux (1997)
+fetch("https://randomuser.me/api/")
+  .then((r2) => r2.json())
+  .then((j) => {
+    console.log("render de la réponse API");
+  })
+  .catch((err) => console.log(err));
 
-// const eleveMatheo = {
-//   prenom: "Mathéo",
-//   nom: "Dubois",
-//   age: 18,
-//   bde: false,
-//   promotions: {
-//     b1_dev: {
-//       anneeDepart: 2025,
-//       anneeFin: 2026,
-//       notes: {
-//         webDynamique: [],
-//         algo: [4.0, 12.0],
-//         c: [12.5, 19.0],
-//       },
-//     },
-//   },
-// };
+console.log("render UI");
 
-// const json = JSON.stringify(eleveMatheo)
+// ======== EQUIVALENT ========
 
-// // paire clef/valeur
-// localStorage.setItem("eleveMatheo", json)
+async function callAPI() {
+  try {
+    const r = await fetch("https://randomuser.me/api/");
+    const j = await r.json();
+    console.log("render de la réponse API");
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+callAPI();
+console.log("render UI");
