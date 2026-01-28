@@ -43,6 +43,10 @@ add.addEventListener("click", (e) => {
   addTask(input.value);
 });
 
+clear.addEventListener("click", () => {
+  list.innerHTML = "";
+});
+
 // Remove all
 // Fichiers
 // Fetch
