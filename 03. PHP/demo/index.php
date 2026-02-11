@@ -20,13 +20,24 @@
   require_once("utils.php");
 
   echo "hello <strong>world!</strong>";
+
+  // Query parameters (GET dans l'URL)
+
   echo "<br><br>Votre age: " . ($_GET["age"] ?? "No age");
   if (isset($_GET["age"])) {
     echo "<br>Votre année de naissance: " . calculerAnneeNaissance($_GET["age"]);
   }
 
-  // Calculez l'année de naissance (estimée à 1 an près) grâce à une fonction
+  echo "<br><br>Votre prénom: " . $_GET["prenom"];
+  echo "<br>Votre nom: " . $_GET["nom"];
   ?>
+
+  <form action="result.php" method="post">
+    <input type="text" name="prenom" id="">
+    <input type="text" name="nom" id="">
+    <input type="text" name="age" id="">
+    <input type="submit" value="Valider">
+  </form>
 
 </body>
 
