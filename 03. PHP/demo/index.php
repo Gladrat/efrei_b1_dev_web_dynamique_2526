@@ -10,6 +10,7 @@
   <h1>Accueil</h1>
   <?php
   // Insérez le header ici
+  // include("nom_du_fichier.php");
   ?>
   <nav id="menu">
     <div class="element_menu">
