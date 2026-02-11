@@ -8,13 +8,13 @@
 </head>
 
 <body>
-  <h1>Contactez-nous</h1>
-  <?php
-  // Insérez le header ici
-  ?>
-  <?php
 
+
+  <?php
+  $title = "Contactez-nous";
+  include("header.php");
   ?>
+
 </body>
 
 </html>
