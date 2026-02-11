@@ -19,6 +19,8 @@
   <?php
   echo "hello <strong>world!</strong>";
   echo "<br><br>Votre age: " . ($_GET["age"] ?? "No age");
+
+  // Calculez l'année de naissance (estimée à 1 an près) grâce à une fonction
   ?>
 
 </body>
